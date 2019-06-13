@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from './style/theme'
 import Routes from './Routes'
+import { Navigation } from './components'
 
 const GlobalStyle = globalStyle()
 
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <Container>
           <GlobalStyle />
+          <Navigation />
           <Routes />
         </Container>
       </ThemeProvider>

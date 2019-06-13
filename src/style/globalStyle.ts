@@ -1,21 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default () => createGlobalStyle`
-@font-face {
-  font-family: 'Helvetica Neue Med';
-  src: local('Helvetica Neue Med'), url('/fonts/HelveticaNeueMed.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: local('Helvetica Neue'), url('/fonts/HelveticaNeue.ttf') format('truetype');
-}
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 html {
-  font-family: 'Helvetica Neue';
+  @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   margin-left: calc(100vw - 100%); 
   color: ${props => props.theme.colors.gray[6]};
@@ -34,16 +27,6 @@ html {
   }
   li {
     list-style: none;
-  }
-  /* custom style for date-time picker */
-  .datetime-custom {
-    width: 320px;
-    .calendar table thead th {
-      color: ${props => props.theme.colors.primary};
-    }
-    .calendar table tbody tr td.selected {
-      background: ${props => props.theme.colors.secondary};
-    }
   }
 }
 `

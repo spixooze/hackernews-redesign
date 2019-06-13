@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
+import News from './pages/News'
 import About from './pages/About'
-import { __RouterContext } from 'react-router'
+import { __RouterContext, Redirect } from 'react-router'
 import { useTransition, animated, config } from 'react-spring'
 import styled from 'styled-components'
 
@@ -11,7 +11,7 @@ const Routes: React.FC = () => {
   const transitions = useTransition(location, location => location.pathname, {
     config: config.stiff,
     initial: { opacity: 0 },
-    from: { opacity: 0, transform: 'translate3d(0px, -50px, 0px)' },
+    from: { opacity: 0, transform: 'translate3d(50px, 0px, 0px)' },
     enter: { opacity: 1, transform: 'translate3d(0px, 0px, 0px)' },
     leave: {
       opacity: 0,
@@ -24,7 +24,8 @@ const Routes: React.FC = () => {
       {transitions.map(({ item, props, key }) => (
         <AnimatedWrapper style={{ ...props }} key={key}>
           <Switch location={item}>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" render={() => <Redirect to="/news" />} />
+            <Route exact path="/news" component={News} />
             <Route exact path="/about" component={About} />
           </Switch>
         </AnimatedWrapper>
