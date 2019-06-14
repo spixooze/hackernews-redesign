@@ -16,4 +16,5 @@ export interface NewsApiResponse {
   status: string
   articles: NewsArticle[]
   totalResults: number
+  message?: string
 }

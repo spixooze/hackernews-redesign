@@ -1,11 +1,12 @@
 import React from 'react'
-import { NewsArticle } from '../../../../Interfaces'
 import styled from 'styled-components'
 import moment from 'moment'
 
-interface ArticleProps extends NewsArticle {}
+import { NewsArticle } from '../../../../Interfaces'
 
-const Article: React.FC<ArticleProps> = ({
+interface Props extends NewsArticle {}
+
+const Article: React.FC<Props> = ({
   title,
   urlToImage,
   url,
@@ -21,8 +22,8 @@ const Article: React.FC<ArticleProps> = ({
         <ContentWrapper>
           <Title>{title}</Title>
           <SubTitle>
-            {author && `By ${author} - `}
             {moment(publishedAt).format('MMM Do YY')}
+            {author && ` - ${author}`}
           </SubTitle>
         </ContentWrapper>
       </Container>
@@ -45,7 +46,13 @@ const Container = styled.div`
   margin: 15px;
   overflow: hidden;
 
-  text-decoration: none;
+  &:hover {
+    box-shadow: ${({ theme }) => `${theme.colors.primary}57`} 0px 0px 3px 1px;
+  }
+
+  @media screen and (max-width: 440px) {
+    width: 290px;
+  }
 `
 const Image = styled.img`
   height: 60%;

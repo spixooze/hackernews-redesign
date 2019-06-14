@@ -7,10 +7,9 @@ export default () => createGlobalStyle`
   margin: 0;
 }
 html {
-  @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Trade+Winds|Lato&display=swap');
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  margin-left: calc(100vw - 100%); 
   color: ${props => props.theme.colors.gray[6]};
   body ::-webkit-scrollbar {
     width: 7px;

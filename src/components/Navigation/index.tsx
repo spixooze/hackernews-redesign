@@ -25,16 +25,30 @@ const NavWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 25px;
+  padding-top: 30px;
   border-bottom: ${({ theme }) => `2px solid ${theme.colors.gray[1]}85`};
+
+  @media screen and (max-width: 750px) {
+    padding: 8px;
+    padding-top: 20px;
+  }
 `
 
 const Title = styled.h1`
-  font-family: 'Lato';
+  font-family: 'Trade Winds';
   color: ${({ theme }) => theme.colors.primary};
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-shadow: ${({ theme }) => `1px 1px 0px ${theme.colors.gray[6]}`};
   font-weight: 400;
-  font-size: 20px;
+  font-size: 40px;
+  line-height: 0px;
+
+  @media screen and (max-width: 750px) {
+    font-size: 25px;
+    line-height: 23px;
+    text-align: left;
+    word-wrap: break-word;
+  }
 `
 const LinkWrapper = styled.div`
   a {
@@ -45,6 +59,10 @@ const LinkWrapper = styled.div`
     text-transform: uppercase;
     text-decoration: none;
     margin-right: 35px;
+
+    @media screen and (max-width: 750px) {
+      margin-right: 15px;
+    }
 
     &:last-child {
       margin-right: 0px;

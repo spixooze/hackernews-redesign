@@ -5,13 +5,13 @@ import { useTrail, animated } from 'react-spring'
 import { NewsArticle } from '../../../Interfaces'
 import Article from './Article'
 
-interface ArticleListProps {
+interface Props {
   articles: NewsArticle[]
 }
 
-const config = { mass: 2, tension: 2000, friction: 250 }
+const config = { mass: 5, tension: 2000, friction: 250 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+const ArticleList: React.FC<Props> = ({ articles }) => {
   const trail = useTrail(articles.length, {
     config,
     from: { opacity: 0, height: 0 },
@@ -35,4 +35,5 @@ const Container = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  min-height: 930px;
 `
