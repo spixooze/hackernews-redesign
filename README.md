@@ -5,7 +5,7 @@
 A Hacker News redesign made for a coding challenge.
 It's using the free news api found at https://newsapi.org. Sign up for a free api key.
 
-![Screenshot](https://github.com/spixooze/hackernews-redesign/blob/master/screenshot.PNG 'Screenshot')
+![Screenshot](https://github.com/spixooze/hackernews-redesign/blob/master/screenshot2.PNG 'Screenshot')
 
 Run it locally:
 
