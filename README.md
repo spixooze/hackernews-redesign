@@ -16,4 +16,4 @@ npm start
 Visit http://localhost:3000
 ```
 
-Remeber to include your newsapi key in the file .env.development
+Remember to include your newsapi key in the file .env.development
