@@ -38,16 +38,18 @@ const Title = styled.h1`
   font-family: 'Trade Winds';
   color: ${({ theme }) => theme.colors.primary};
   letter-spacing: 2px;
-  text-shadow: ${({ theme }) => `1px 1px 0px ${theme.colors.gray[6]}`};
+  text-shadow: ${({ theme }) => `1px 2px 0px ${theme.colors.gray[6]}`};
   font-weight: 400;
   font-size: 40px;
   line-height: 0px;
 
   @media screen and (max-width: 750px) {
+    text-shadow: ${({ theme }) => `1px 1px 0px ${theme.colors.gray[6]}`};
     font-size: 25px;
     line-height: 23px;
     text-align: left;
     word-wrap: break-word;
+    width: 150px;
   }
 `
 const LinkWrapper = styled.div`

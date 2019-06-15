@@ -16,13 +16,15 @@ const News: React.FC = () => {
     'top-headlines'
   )
   const [error, setError] = useState(null)
-
   const fetchArticles = async (): Promise<NewsApiResponse> => {
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/${articleCategory}?sources=hacker-news&pageSize=${PAGE_SIZE}&page=${currentPage}&apiKey=${
-          process.env.REACT_APP_NEWSAPI_KEY
-        }`
+        `https://newsapi.org/v2/${articleCategory}?sources=hacker-news&pageSize=${PAGE_SIZE}&page=${currentPage}`,
+        {
+          headers: {
+            'x-api-key': process.env.REACT_APP_NEWSAPI_KEY
+          }
+        }
       )
       return await response.json()
     } catch (error) {

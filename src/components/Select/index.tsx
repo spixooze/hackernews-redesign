@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export default styled.select`
   width: 400px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 4px 8px;
   border-radius: 2px;
   font-size: 16px;
